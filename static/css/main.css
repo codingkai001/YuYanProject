@@ -1,0 +1,99 @@
+body{
+    background: url("../../static/img/home.jpg") no-repeat;
+}
+.main-style{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /*border: 1px solid red;*/
+}
+.show-ball{
+    left: 0;
+    position: absolute;
+    height: 100%;
+    /*border: 1px solid blue;*/
+    /*background-color: blue;*/
+}
+.sign-in-form{
+    right: 0;
+    position: absolute;
+    height: 100%;
+    /*border: 1px solid greenyellow;*/
+    /*background-color: greenyellow;*/
+}
+.form-area{
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    top: 20%;
+    left: 15%;
+    padding: 20px 10px;
+    /*background-color: #00F7DE;*/
+    /*border: 1px solid greenyellow;*/
+}
+.form-area h3{
+    font-size: 30px;
+    text-indent: 1.5em;
+    color: white;
+}
+.form-area hr{
+    width: 80%;
+    margin: 10px auto;
+    height: 2px;
+    background-color: gray;
+}
+.user-field,.psw-field{
+    background: none;
+    padding: 0 20px;
+    width: 70%;
+    margin: 20px auto;
+    height: 50px;
+    border-width: 2px;
+    font-size: 20px;
+    color: #c5d350;
+}
+.btn-submit{
+    position: relative;
+    left: 15%;
+}
+.form-area a{
+    position: relative;
+    float: right;
+    margin: -20px 40px 20px 20px;
+    font-size: 17px;
+    color: white;
+}
+a:hover,a:focus,a:visited,a:link{
+    text-decoration: none;
+}
+#info-label{
+    position: relative;
+    left: 60px;
+    bottom: 10px;
+    font-size: 20px;
+    color: white;
+}
+#QQ-link{
+    border: none;
+    background-color: green;
+    float: left;
+    left: 10%;
+    position: relative;
+    margin: 10px 20px;
+    width: 30%;
+    height: 40px;
+    color: white;
+    font-size: 17px;
+}
+#weibo-link{
+    border: none;
+    background-color: orange;
+    float: right;
+    right: 10%;
+    width: 30%;
+    height: 40px;
+    position: relative;
+    margin: 10px 20px;
+    color: white;
+    font-size: 17px;
+}
