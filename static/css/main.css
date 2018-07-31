@@ -11,38 +11,50 @@ body{
     left: 0;
     position: absolute;
     height: 100%;
-    /*border: 1px solid blue;*/
+    border: 1px solid blue;
     /*background-color: blue;*/
 }
-.sign-in-form{
+
+.form-area {
     right: 0;
     position: absolute;
     height: 100%;
-    /*border: 1px solid greenyellow;*/
+    border: 1px solid greenyellow;
     /*background-color: greenyellow;*/
 }
-.form-area{
+
+.sign-in-form, .sign-up-form {
     position: absolute;
     width: 70%;
     height: 60%;
-    top: 20%;
     left: 15%;
     padding: 20px 10px;
     /*background-color: #00F7DE;*/
     /*border: 1px solid greenyellow;*/
 }
-.form-area h3{
+
+.sign-up-form {
+    top: 5%;
+}
+
+.sign-in-form {
+    top: 15%;
+}
+
+.sign-in-form h3, .sign-up-form h3 {
     font-size: 30px;
     text-indent: 1.5em;
     color: white;
 }
-.form-area hr{
+
+.sign-up-form hr, .sign-in-form hr {
     width: 80%;
     margin: 10px auto;
     height: 2px;
     background-color: gray;
 }
-.user-field,.psw-field{
+
+#user-field, #psw-field, #psw-confirm, #phone-field, #verifying-field {
     background: none;
     padding: 0 20px;
     width: 70%;
@@ -51,12 +63,36 @@ body{
     border-width: 2px;
     font-size: 20px;
     color: #c5d350;
+    /*border: 1px solid red;*/
+}
+
+#verifying-code {
+    position: absolute;
+    margin: 5px 0;
+    left: 18%;
+    width: 30%;
+    height: 40px;
+    background: none;
+    border-width: 2px;
+    font-size: 20px;
+    color: #c5d350;
+}
+
+#send-msg {
+    position: absolute;
+    margin: 5px 0;
+    right: 18%;
+    width: 25%;
+    height: 40px;
+    color: white;
+    font-size: 17px;
 }
 .btn-submit{
     position: relative;
     left: 15%;
 }
-.form-area a{
+
+.sign-in-form a, .sign-up-form a {
     position: relative;
     float: right;
     margin: -20px 40px 20px 20px;
@@ -79,21 +115,21 @@ a:hover,a:focus,a:visited,a:link{
     float: left;
     left: 10%;
     position: relative;
-    margin: 10px 20px;
-    width: 30%;
+    margin: 10px 10px;
+    width: 35%;
     height: 40px;
     color: white;
-    font-size: 17px;
+    font-size: 15px;
 }
 #weibo-link{
     border: none;
     background-color: orange;
     float: right;
     right: 10%;
-    width: 30%;
+    width: 35%;
     height: 40px;
     position: relative;
-    margin: 10px 20px;
+    margin: 10px 10px;
     color: white;
-    font-size: 17px;
+    font-size: 15px;
 }
