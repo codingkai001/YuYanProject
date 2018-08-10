@@ -23,6 +23,7 @@ body {
     top: 0;
     height: 2000px;
     border: 1px solid red;
+    overflow: visible;
     /*background: linear-gradient(to right, #355C7D, #6C5B7B, #C06C84);*/
 }
 
@@ -32,13 +33,14 @@ body {
     height: 5%;
     /*background-color: #3b8d99;*/
     /*color: yellow;!important;*/
+    /*z-index: 20;*/
 }
 
 #profile {
     position: absolute;
     width: 100%;
     height: 15%;
-    border: 1px solid yellow;
+    /*border: 1px solid yellow;*/
 }
 
 #list {
@@ -46,7 +48,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 80%;
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
 }
 
 #profile img {
@@ -64,10 +66,10 @@ body {
     width: 60%;
     height: 30%;
     top: 35%;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     font-size: 25px;
     right: 0;
-    color: #00F7DE;
+    color: navajowhite;
     overflow: hidden;
 
 }
@@ -77,7 +79,7 @@ body {
     position: relative;
     width: 100%;
     height: 10%;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     font-size: 25px;
     letter-spacing: 0.5em;
     text-decoration: none;
@@ -118,6 +120,7 @@ body {
     right: 0;
     height: 100%;
     border: 1px solid black;
+
 }
 
 #top-nav ul li {
@@ -135,7 +138,8 @@ body {
     letter-spacing: 0.5em;
     padding: 25px;
     text-decoration: none;
-    color: #fef700 !important;
+    /*color: green;*/
+    /*z-index: 50;*/
 }
 
 #top-nav ul li:hover {
