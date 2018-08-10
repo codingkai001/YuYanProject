@@ -140,8 +140,8 @@ $(function () {
             if (isMoving) return;
             var oIndex = $(this).index();
 
-            if (oIndex == index_2) return;//点击按钮的序列号与当前图片的序列号一致，return
-            clearInterval(intervaltimer)
+            if (oIndex === index_2) return;//点击按钮的序列号与当前图片的序列号一致，return
+            clearInterval(intervaltimer);
             intervaltimer = null;
 
             var flag = false;
@@ -163,7 +163,7 @@ $(function () {
                 }
             }
             slide(flag);
-            intervaltimer = setInterval(slide, 3000);//自动轮播
+            intervaltimer = setInterval(slide, 5000);//自动轮播
 
         });
 
@@ -175,7 +175,7 @@ $(function () {
         }).on("mouseout", function () {//鼠标移除重新滚动
             clearInterval(intervaltimer);
             intervaltimer = null;
-            intervaltimer = setInterval(slide, 3000);
+            intervaltimer = setInterval(slide, 5000);
         });
 
         $(".js_pre").click(function (event) {//上一张
@@ -183,7 +183,7 @@ $(function () {
             clearInterval(intervaltimer);
             intervaltimer = null;
             slide(1);
-            intervaltimer = setInterval(slide, 3000);
+            intervaltimer = setInterval(slide, 5000);
         });
 
         $(".js_next").click(function (event) {//下一张
@@ -191,10 +191,10 @@ $(function () {
             clearInterval(intervaltimer);
             intervaltimer = null;
             slide();
-            intervaltimer = setInterval(slide, 3000);
+            intervaltimer = setInterval(slide, 5000);
         });
 
-        intervaltimer = setInterval(slide, 3000);
+        intervaltimer = setInterval(slide, 5000);
 
     } else {
 

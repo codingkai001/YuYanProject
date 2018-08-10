@@ -1,14 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    color: white;
 }
 
+body {
+    background: url("../img/back.jpg") repeat;
+}
 #left-nav {
     position: fixed;
     width: 15%;
     height: 100%;
     border: 1px solid black;
-    background: linear-gradient(to top, #403A3E, #BE5869);
+    /*background: linear-gradient(to top, #403A3E, #BE5869);*/
     overflow: auto;
 }
 
@@ -19,14 +23,15 @@
     top: 0;
     height: 2000px;
     border: 1px solid red;
-    background: linear-gradient(to right, #355C7D, #6C5B7B, #C06C84);
+    /*background: linear-gradient(to right, #355C7D, #6C5B7B, #C06C84);*/
 }
 
 #top-nav {
     position: absolute;
     width: 100%;
     height: 5%;
-    background-color: #3b8d99;
+    /*background-color: #3b8d99;*/
+    /*color: yellow;!important;*/
 }
 
 #profile {
@@ -40,22 +45,23 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 85%;
+    height: 80%;
     border: 1px solid gray;
 }
 
 #profile img {
     position: absolute;
-    width: 80px;
-    height: 80px;
-    margin: 30px;
-    border-radius: 40px;
+    width: 30%;
+    height: 60%;
+    margin: 0 5%;
+    top: 20%;
+    border-radius: 50%;
     border: 2px solid black;
 }
 
 #profile span {
     position: absolute;
-    width: 160px;
+    width: 60%;
     height: 30%;
     top: 35%;
     border: 1px solid red;
@@ -79,23 +85,24 @@
 }
 
 #list a:hover {
-    background-color: #783648;
+    /*background-color: #783648;*/
 }
 
 #list ul li {
     display: block;
     position: relative;
     width: 100%;
-    height: 7%;
-    font-size: 25px;
+    height: 8%;
+    font-size: 23px;
     /*border: 1px solid forestgreen;*/
     cursor: pointer;
     color: #1E9FFF;
+    margin: 10px 0;
     /*background-color: #782a09;*/
 }
 
 #list ul li:hover {
-    background-color: #783648;
+    /*background-color: #783648;*/
 }
 
 #top-nav img {
@@ -128,10 +135,12 @@
     letter-spacing: 0.5em;
     padding: 25px;
     text-decoration: none;
+    color: #fef700 !important;
 }
 
 #top-nav ul li:hover {
-    background-color: #2d6774;
+    /*background-color: #2d6774;*/
+    color: #fef700;
 }
 
 .main_banner {
@@ -178,4 +187,54 @@
     font-size: 20px;
     margin: 10px 50px;
     border: 1px solid #f0ad4e;
+}
+
+.icon {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    left: 15%;
+    top: 35%;
+}
+
+.description {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    left: 35%;
+    top: 27%;
+    font-size: 27px;
+}
+
+.up-down {
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 30%;
+    top: 35%;
+}
+
+#account-list li, #setting-list li, #moment-list li {
+    position: relative;
+    /*text-align: left;*/
+    width: 100%;
+    /*left: 30%;*/
+    /*height: 50px;*/
+    /*background-color: white;*/
+}
+
+.text {
+    position: absolute;
+    width: 60%;
+    right: 0;
+    text-align: left;
+}
+
+.logo {
+    position: relative;
+    width: 20%;
+    left: 20%;
+    /*font-size: 27px;*/
+    vertical-align: middle;
+    /*overflow: visible;*/
 }
