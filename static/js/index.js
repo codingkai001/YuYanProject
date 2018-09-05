@@ -29,5 +29,58 @@ $(document).ready(function () {
         $("#moment-list li").slideToggle(500);
         click_time3++;
     });
+
+    // console.log(13);
+
+    //加载用户信息
+    /*var photo = $("#profile img");
+    // photo.attr("src", "http://120.77.32.233/xinyuan/img/user/1");
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open("GET", "http://120.77.32.233/xinyuan/img/user/2");
+    xhr1.onreadystatechange = function () {
+        if (xhr1.readyState === 4 && xhr1.status === 200) {
+            var src = xhr1.response;
+            // alert(src);
+        }
+        else {
+            // alert(xhr1.status);
+        }
+    };
+    xhr1.send();*/
+
+    //加载今日榜单
+    var xhr2 = new XMLHttpRequest();
+    var date = getFormatDate();
+    xhr2.open("POST", "http://120.77.32.233/xinyuan/wish/get/day/1/" + date);
+    xhr2.onreadystatechange = function () {
+        if (xhr2.readyState === 4 && xhr2.status === 200) {
+            var response = eval("(" + xhr2.responseText + ")");
+            alert(response.msg)
+        }
+    };
+    xhr2.send();
+
+    //加载实现榜单
+    var xhr3 = new XMLHttpRequest();
+    xhr3.open("POST", "http://120.77.32.233//xinyuan/wish/get/real/1");
+    xhr3.onreadystatechange = function () {
+        if (xhr3.readyState === 4 && xhr3.status === 200) {
+            var response = eval("(" + xhr3.responseText + ")");
+            alert(response.msg);
+        }
+    };
+    xhr3.send();
 });
+
+function getFormatDate() {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    if (month >= 1 && month <= 9)
+        month = "0" + month.toString();
+    if (day >= 1 && day <= 9)
+        day = "0" + day.toString();
+    return year.toString() + "-" + month.toString() + "-" + day.toString();
+}
 

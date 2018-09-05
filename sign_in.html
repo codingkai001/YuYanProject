@@ -21,11 +21,11 @@
             <br>
             <h3>用户登录</h3>
             <hr><br>
-            <form action="#" method="post" class="form-horizontal" autocomplete="off">
-                <input type="text" name="username" class="form-control" id="user-field" placeholder="用户名/手机号">
-                <input type="password" name="psw" class="form-control" id="psw-field" placeholder="密码">
+            <form action="http://120.77.32.233/xinyuan/user/login" method="post" class="form-horizontal"
+                  autocomplete="off" onsubmit="return login_validate()">
+                <input type="text" name="phone" class="form-control" id="user-field" placeholder="用户名/手机号">
+                <input type="password" name="password" class="form-control" id="psw-field" placeholder="密码">
                 <button type="submit" class="btn-submit btn btn-success btn-lg">登录</button>
-                /
             </form>
             <a href="sign_up.html" class="to-sign-up">还没有账号？<span style="color: coral">立即注册</span></a>
             <hr><br>
@@ -39,6 +39,7 @@
 <script src="static/js/jquery.min.js"></script>
 <script src="static/bootstrap/js/bootstrap.min.js"></script>
 <script src="static/js/layui.js"></script>
-<script src="static/js/show_profile.js"></script>
+<!--<script src="static/js/show_profile.js"></script>-->
+<script src="static/js/sign.js"></script>
 </body>
 </html>
