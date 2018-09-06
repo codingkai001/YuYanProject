@@ -30,23 +30,41 @@ $(document).ready(function () {
         click_time3++;
     });
 
-    // console.log(13);
-
     //加载用户信息
-    /*var photo = $("#profile img");
-    // photo.attr("src", "http://120.77.32.233/xinyuan/img/user/1");
-    var xhr1 = new XMLHttpRequest();
-    xhr1.open("GET", "http://120.77.32.233/xinyuan/img/user/2");
-    xhr1.onreadystatechange = function () {
-        if (xhr1.readyState === 4 && xhr1.status === 200) {
-            var src = xhr1.response;
-            // alert(src);
+    $.ajax({
+        url: "http://120.77.32.233/xinyuan/sms/send/18750718682/1",
+        type: "POST",
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (data) {
+            if (data.code === 200) {
+                var username = data.data.username;
+                $("#profile span").html(username.toString());
+                var id = data.data.id;
+                var user_photo = $("#profile img");
+                user_photo.attr("src", "http://120.77.32.233/xinyuan/img/user/" + id.toString());
+            }
+        },
+        error: function (err) {
+            alert(err);
         }
-        else {
-            // alert(xhr1.status);
-        }
-    };
-    xhr1.send();*/
+    });
+    // var xhr1 = new XMLHttpRequest();
+    // xhr1.open("POST", "http://120.77.32.233/xinyuan/user/info");
+    // xhr1.onreadystatechange = function () {
+    //     if (xhr1.readyState === 4 && xhr1.status === 200) {
+    //         var response = eval("("+xhr1.responseText+")");
+    //         if (response.code === 200){
+    //             var username = response.data.username;
+    //             $("#profile span").html(username.toString());
+    //             var id = response.data.id;
+    //             var user_photo = $("#profile img");
+    //             user_photo.attr("src", "http://120.77.32.233/xinyuan/img/user/"+id.toString());
+    //         }
+    //     }
+    // };
+    // xhr1.send();
 
     //加载今日榜单
     var xhr2 = new XMLHttpRequest();
@@ -55,7 +73,7 @@ $(document).ready(function () {
     xhr2.onreadystatechange = function () {
         if (xhr2.readyState === 4 && xhr2.status === 200) {
             var response = eval("(" + xhr2.responseText + ")");
-            alert(response.msg)
+            // alert(response.msg);
         }
     };
     xhr2.send();
@@ -66,7 +84,7 @@ $(document).ready(function () {
     xhr3.onreadystatechange = function () {
         if (xhr3.readyState === 4 && xhr3.status === 200) {
             var response = eval("(" + xhr3.responseText + ")");
-            alert(response.msg);
+            // alert(response.msg);
         }
     };
     xhr3.send();
