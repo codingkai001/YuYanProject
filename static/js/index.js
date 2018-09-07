@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     //加载用户信息
     $.ajax({
-        url: "http://120.77.32.233/xinyuan/sms/send/18750718682/1",
+        url: "http://120.77.32.233/xinyuan/user/info",
         type: "POST",
         xhrFields: {
             withCredentials: true
@@ -45,49 +45,128 @@ $(document).ready(function () {
                 var user_photo = $("#profile img");
                 user_photo.attr("src", "http://120.77.32.233/xinyuan/img/user/" + id.toString());
             }
+            else {
+                alert("数据加载异常");
+            }
         },
-        error: function (err) {
-            alert(err);
+        error: function (xhr, status, error) {
+            console.log(status.toString() + ": " + error);
         }
     });
-    // var xhr1 = new XMLHttpRequest();
-    // xhr1.open("POST", "http://120.77.32.233/xinyuan/user/info");
-    // xhr1.onreadystatechange = function () {
-    //     if (xhr1.readyState === 4 && xhr1.status === 200) {
-    //         var response = eval("("+xhr1.responseText+")");
-    //         if (response.code === 200){
-    //             var username = response.data.username;
-    //             $("#profile span").html(username.toString());
-    //             var id = response.data.id;
-    //             var user_photo = $("#profile img");
-    //             user_photo.attr("src", "http://120.77.32.233/xinyuan/img/user/"+id.toString());
-    //         }
-    //     }
-    // };
-    // xhr1.send();
+
 
     //加载今日榜单
-    var xhr2 = new XMLHttpRequest();
-    var date = getFormatDate();
-    xhr2.open("POST", "http://120.77.32.233/xinyuan/wish/get/day/1/" + date);
-    xhr2.onreadystatechange = function () {
-        if (xhr2.readyState === 4 && xhr2.status === 200) {
-            var response = eval("(" + xhr2.responseText + ")");
-            // alert(response.msg);
+    var date = getFormatDate(); //  格式化今日日期
+    $.ajax({
+        url: "http://120.77.32.233/xinyuan/wish/get/day/1/",
+        type: "POST",
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (result, status, xhr) {
+            if (result.code === 200) {
+                //加载成功
+                var today = $("#today-list ol");
+                var list = result.data;   //榜单数组
+                for (var i = 0; i < list.length; ++i) {
+                    var id = list[i].id.toString();
+                    var content = list[i].content.substring(0, 10);
+                    var link = $("<a></a>").text(content);
+                    link.attr("id", id);
+                    var item = $("<li></li>");
+                    item.append(link);
+                    today.append(item);
+                }
+            }
+            else {
+                //加载异常
+                alert("数据加载异常");
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log(status.toString() + ": " + error);
         }
-    };
-    xhr2.send();
+
+    });
+    // var xhr2 = new XMLHttpRequest();
+    // var date = getFormatDate();
+    // xhr2.open("POST", "http://120.77.32.233/xinyuan/wish/get/day/1/" + date);
+    // xhr2.onreadystatechange = function () {
+    //     if (xhr2.readyState === 4 && xhr2.status === 200) {
+    //         var response = eval("(" + xhr2.responseText + ")");
+    //         // alert(response.msg);
+    //     }
+    // };
+    // xhr2.send();
 
     //加载实现榜单
-    var xhr3 = new XMLHttpRequest();
-    xhr3.open("POST", "http://120.77.32.233//xinyuan/wish/get/real/1");
-    xhr3.onreadystatechange = function () {
-        if (xhr3.readyState === 4 && xhr3.status === 200) {
-            var response = eval("(" + xhr3.responseText + ")");
-            // alert(response.msg);
+    $.ajax({
+        url: "http://120.77.32.233/xinyuan/wish/get/real/1",
+        type: "POST",
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (result, status, xhr) {
+            if (result.code === 200) {
+                var real = $("#real-list ol");
+                var list = result.data;
+                for (var i = 0; i < list.length; ++i) {
+                    var id = list[i].id.toString();
+                    var content = list[i].content.substring(0, 10);
+                    var link = $("<a></a>").text(content);
+                    link.attr("id", id);
+                    var item = $("<li></li>");
+                    item.append(link);
+                    real.append(item);
+                }
+            }
+            else {
+                alert("数据加载异常");
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log(status.toString() + ": " + error);
         }
-    };
-    xhr3.send();
+    });
+    // var xhr3 = new XMLHttpRequest();
+    // xhr3.open("POST", "http://120.77.32.233//xinyuan/wish/get/real/1");
+    // xhr3.onreadystatechange = function () {
+    //     if (xhr3.readyState === 4 && xhr3.status === 200) {
+    //         var response = eval("(" + xhr3.responseText + ")");
+    //         // alert(response.msg);
+    //     }
+    // };
+    // xhr3.send();
+
+    //加载热门榜单
+    $.ajax({
+        url: "http://120.77.32.233/xinyuan/wish/get/all/1",
+        type: "POST",
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (result, status, xhr) {
+            if (result.code === 200) {
+                var hit = $("#major-topic ol");
+                var list = result.data;
+                for (var i = 0; i < list.length; ++i) {
+                    var id = list[i].id.toString();
+                    var content = list[i].content.substring(0, 10);
+                    var item = $("<li></li>");
+                    var link = $("<a></a>").text(content);
+                    link.attr("id", id);
+                    item.append(link);
+                    hit.append(item);
+                }
+            }
+            else {
+                alert("数据加载异常");
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log(status.toString() + ": " + error)
+        }
+    })
 });
 
 function getFormatDate() {
